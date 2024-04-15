@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy">
+    <title>Websocket Test</title>
+  </head>
+  <style>
+    .cam {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      /* background-color: black; */
+    }
+
+    .btn {
+      position: absolute;
+      z-index: 50;
+      top: 10px;
+      left: 10px;
+    }
+  </style>
+  <body onload="ready()">
+    <div id="app">
+      <video class="cam" autoplay loop playsinline></video>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
