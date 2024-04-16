@@ -8,10 +8,10 @@ const retrieveVirtualCam = async () => {
   
     if (camera.length === 0) {
       console.error('No OBS camera found');
-      handleCamera(devices[0].deviceId)
+      await handleCamera(devices[0].deviceId)
     }
 
-    handleCamera(camera[0].deviceId)
+    await handleCamera(camera[0].deviceId)
   } catch (error) {
     console.error(error)
   }
@@ -36,7 +36,9 @@ async function handleCamera(id: string) {
   }
 }
 
-window.onload = async () => {
-  await retrieveVirtualCam()
-  await connect()
+window.onload = () => {
+  setTimeout(async () => {
+    await retrieveVirtualCam()
+    await connect()
+  }, 200)
 }
